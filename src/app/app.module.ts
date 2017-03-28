@@ -13,7 +13,7 @@ import {RichGridComponent} from './rich-grid-example/rich-grid.component';
 import { GlyphiconButtonComponent } from './glyphicon-button/glyphicon-button.component';
 import { AccordionModule } from 'ng2-bootstrap/accordion';
 import { TabsModule } from 'ng2-bootstrap/tabs';
-import { DynamicTabComponent } from './bootstrap-tabs/tabs.component';
+import { DynamicTabComponent } from './ng2-bootstrap-tabs/tabs.component';
 import { PopoverModule } from 'ng2-bootstrap/popover';
 import { PopoverNg2BootstrapComponent } from './ng2-bootstrap-popover/popover.component';
 
