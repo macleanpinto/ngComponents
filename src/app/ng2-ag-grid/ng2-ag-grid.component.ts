@@ -26,6 +26,7 @@ export class Ng2AgGridComponent implements OnInit {
   public rowCount: string;
   public dateComponentFramework: DateComponent;
   public HeaderGroupComponent = HeaderGroupComponent;
+  public defaultPazeSize = 10;
 
   ngOnInit() {
   }
@@ -43,6 +44,7 @@ export class Ng2AgGridComponent implements OnInit {
         menuIcon: 'fa-bars'
       }
     }
+    this.gridOptions.paginationPageSize = this.defaultPazeSize;
     this.gridOptions.datasource = this.dataSource;
   }
 
@@ -107,6 +109,7 @@ export class Ng2AgGridComponent implements OnInit {
   }
 
   public deleteSelected() {
+    alert('In delete');
     let selectedNodes = this.gridOptions.api.getSelectedNodes();
     this.gridOptions.api.removeItems(selectedNodes);
   }

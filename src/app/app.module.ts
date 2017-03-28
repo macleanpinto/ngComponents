@@ -11,6 +11,11 @@ import { HeaderGroupComponent } from "./header-group-component/header-group.comp
 import { Ng2AgGridComponent } from './ng2-ag-grid/ng2-ag-grid.component';
 import {RichGridComponent} from './rich-grid-example/rich-grid.component';
 import { GlyphiconButtonComponent } from './glyphicon-button/glyphicon-button.component';
+import { AccordionModule } from 'ng2-bootstrap/accordion';
+import { TabsModule } from 'ng2-bootstrap/tabs';
+import { DynamicTabComponent } from './bootstrap-tabs/tabs.component';
+import { PopoverModule } from 'ng2-bootstrap/popover';
+import { PopoverNg2BootstrapComponent } from './ng2-bootstrap-popover/popover.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,18 @@ import { GlyphiconButtonComponent } from './glyphicon-button/glyphicon-button.co
     HeaderGroupComponent,
     HeaderComponent,
     RichGridComponent,
-    GlyphiconButtonComponent
+    GlyphiconButtonComponent,
+    DynamicTabComponent,
+    PopoverNg2BootstrapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
+    AccordionModule.forRoot(),
+    TabsModule.forRoot(),
+    PopoverModule.forRoot(),
     AgGridModule.withComponents(
       [
         DateComponent,

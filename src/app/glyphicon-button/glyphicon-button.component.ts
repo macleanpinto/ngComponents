@@ -22,4 +22,8 @@ export class GlyphiconButtonComponent implements OnInit, ICellRendererAngularCom
   public invokeParentMethod() {
     this.params.context.componentParent.methodFromParent(`Row: ${this.params.node.rowIndex}, Col: ${this.params.colDef.headerName}`)
   }
+    public deleteSelected() {
+    alert('Delete');
+    this.params.context.componentParent.deleteSelected()
+  }
 }

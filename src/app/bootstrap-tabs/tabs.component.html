@@ -1,0 +1,10 @@
+<div (click)="$event.preventDefault()">
+    <tabset [justified]="true">
+        <tab *ngFor="let tabz of tabs" [heading]="tabz.title" [active]="tabz.active" (select)="tabz.active = true" (deselect)="tabz.active = false"
+            [disabled]="tabz.disabled" [removable]="tabz.removable" (removed)="removeTabHandler(tabz)" [customClass]="tabz.customClass"
+            [ngSwitch]="tabz.title">
+            <ng2-ag-grid *ngSwitchCase="'Rebate Rules'"></ng2-ag-grid>
+            {{tabz?.content}}
+        </tab>
+    </tabset>
+</div>
