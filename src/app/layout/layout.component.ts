@@ -22,4 +22,8 @@ export class LayoutComponent implements OnInit {
     this.items.push({ label: 'Lionel Messi', url: 'https://en.wikipedia.org/wiki/Lionel_Messi' });
   }
 
+  private onSearch(searchText: String) {
+    console.log(searchText);
+  }
+
 }

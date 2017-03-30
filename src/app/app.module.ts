@@ -20,6 +20,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { LayoutComponent } from './layout/layout.component';
 import { NgComponentsModule } from './ng-components/ng-components.module';
+
 @NgModule({
   declarations: [
     AppComponent,
