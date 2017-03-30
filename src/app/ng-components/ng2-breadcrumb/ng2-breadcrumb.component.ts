@@ -31,8 +31,6 @@ export class Ng2BreadcrumbComponent implements OnDestroy {
 
     @Input() styleClass: string;
 
-    @Input() home: any;
-
     constructor(public router: Router) { }
 
     itemClick(event, item: any)  {
