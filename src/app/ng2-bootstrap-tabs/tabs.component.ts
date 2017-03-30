@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
  
 @Component({
-  selector: 'tabs-dynamic',
+  selector: 'ng2-bootstrap',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './tabs.component.html'
 })

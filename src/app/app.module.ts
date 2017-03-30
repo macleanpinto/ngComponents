@@ -9,14 +9,17 @@ import { DateComponent } from "./date-component/date.component";
 import { HeaderComponent } from "./header-component/header.component";
 import { HeaderGroupComponent } from "./header-group-component/header-group.component";
 import { Ng2AgGridComponent } from './ng2-ag-grid/ng2-ag-grid.component';
-import {RichGridComponent} from './rich-grid-example/rich-grid.component';
+import { RichGridComponent } from './rich-grid-example/rich-grid.component';
 import { GlyphiconButtonComponent } from './glyphicon-button/glyphicon-button.component';
 import { AccordionModule } from 'ng2-bootstrap/accordion';
 import { TabsModule } from 'ng2-bootstrap/tabs';
-import { DynamicTabComponent } from './bootstrap-tabs/tabs.component';
+import { DynamicTabComponent } from './ng2-bootstrap-tabs/tabs.component';
 import { PopoverModule } from 'ng2-bootstrap/popover';
 import { PopoverNg2BootstrapComponent } from './ng2-bootstrap-popover/popover.component';
-
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import { ROUTES } from './app.routes';
+import { LayoutComponent } from './layout/layout.component';
+import { NgComponentsModule } from './ng-components/ng-components.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { PopoverNg2BootstrapComponent } from './ng2-bootstrap-popover/popover.co
     RichGridComponent,
     GlyphiconButtonComponent,
     DynamicTabComponent,
-    PopoverNg2BootstrapComponent
+    PopoverNg2BootstrapComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { PopoverNg2BootstrapComponent } from './ng2-bootstrap-popover/popover.co
     AccordionModule.forRoot(),
     TabsModule.forRoot(),
     PopoverModule.forRoot(),
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
     AgGridModule.withComponents(
       [
         DateComponent,
@@ -44,7 +49,8 @@ import { PopoverNg2BootstrapComponent } from './ng2-bootstrap-popover/popover.co
         HeaderGroupComponent,
         GlyphiconButtonComponent
       ]
-    )
+    ),
+    NgComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
