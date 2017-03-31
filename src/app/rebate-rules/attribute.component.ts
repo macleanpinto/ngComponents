@@ -11,6 +11,7 @@ export class AttributeComponent {
     @Input() private deleteCheck : boolean;
     @Input() private attributeCounter : number;
     @Input() private index : number;
+    @Input() private attributeTypeValues : string[];
     @Output() private add = new EventEmitter();
     @Output() private delete = new EventEmitter();
     private seachText: String;

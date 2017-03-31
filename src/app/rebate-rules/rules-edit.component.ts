@@ -14,6 +14,11 @@ export class RulesEditComponent {
     allowAdd: boolean = true;
     allowDelete: boolean = false;
     index : number;
+    private attributeTypeValues : string[];
+
+    constructor(){
+        this.attributeTypeValues = ['1','2','3','4'];
+    }
 
 
     onAdd(increment: number) {
