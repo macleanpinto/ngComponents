@@ -8,18 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class LayoutComponent implements OnInit {
 
   constructor() { }
-
-
-
-
   private items: any[];
 
   ngOnInit() {
     this.items = [];
-    this.items.push({ label: 'AgGrid', routerLink: "aggrid" });
-    this.items.push({ label: 'Search', routerLink: "search" });
+    this.items.push({ label: 'AgGrid', url: "aggridBreadcrumb" });
+    this.items.push({ label: 'Search', url: "searchBreadcrumb" });
   }
-
   private onSearch(searchText: String) {
     console.log(searchText);
   }
