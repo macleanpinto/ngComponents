@@ -3,9 +3,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'rule-edit-attribute',
     templateUrl: 'attribute.component.html',
-    styles: [`.fa-2 { font-size: 2em; }`],
+    styles: [`.fa-2 {
+    font-size: 2em;
+}`],
     inputs: ['addCheck', 'deleteCheck', 'index', 'attributeTypeValues'],
-    outputs: ['add', 'delete','selected']
+    outputs: ['add', 'delete', 'selected']
 
 })
 export class AttributeComponent {
@@ -30,7 +32,8 @@ export class AttributeComponent {
     }
 
     public onChange(value: String) {
-        this.selected.emit({selected:value});
+        this.selected.emit({ selected: value });
     }
 
+ 
 }

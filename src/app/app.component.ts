@@ -14,4 +14,5 @@ export class AppComponent {
     this.items.push({ label: 'AgGrid', url: "aggrid" });
     this.items.push({ label: 'Search', url: "search" });
   }
+  private selectedItems:String[]=["data1","data2","data3"]
 }
