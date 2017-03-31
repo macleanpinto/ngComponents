@@ -1,32 +1,21 @@
 <div>
     <p *ngIf="index != 0">AND</p>
-    <form class="form-horizontal">
-        <div class="form-group" style="float:left;">
-            <label class="control-label col-sm-2">Attribute Type</label>
-            <div class="col-sm-10">
-                <select class="form-control" id="attributeType">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="attributeType">Attribute Type</label>
+            <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType">
             <option *ngFor="let attributeType of attributeTypeValues"    [value]="attributeType" >
                  {{attributeType}}
             </option>
         </select>
-            </div>
+        </div>
+        <div class="form-group">
+            <label for="attributeValue">Attribute Value</label>
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeValue" placeholder="Another input">
+        </div>
+        <div class="form-group">
+            <button *ngIf="deleteCheck" class="btn btn-link mb-2 mr-sm-2 mb-sm-0" (click)="deleteAttribute()"><i class="fa fa-times fa-2" aria-hidden="true"></i></button>
+            <button *ngIf="addCheck" class="btn btn-link mb-2 mr-sm-2 mb-sm-0" (click)="addAttribute()"><i class="fa fa-plus fa-2" aria-hidden="true"></i></button>
         </div>
     </form>
-    <form class="form-horizontal">
-        <div class="form-group" style="float:left;">
-            <label class="control-label col-sm-2">Attribute Value</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="attributeValue">
-            </div>
-        </div>
-    </form>
-    <form class="form-horizontal">
-        <div class="form-group" style="float:left; ">
-            <button *ngIf="addCheck" class="btn btn-default" (click)="addAttribute()">Add</button>
-            <button *ngIf="deleteCheck" class="btn btn-default" (click)="deleteAttribute()">Delete</button>
-
-        </div>
-    </form>
-
-
 </div>
