@@ -46,7 +46,7 @@ import { RulesEditComponent } from './rebate-rules/rules-edit.component';
     AccordionModule.forRoot(),
     TabsModule.forRoot(),
     PopoverModule.forRoot(),
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    ROUTES,
     AgGridModule.withComponents(
       [
         DateComponent,

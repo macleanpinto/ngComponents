@@ -56,7 +56,8 @@ export class Ng2BreadcrumbComponent implements OnDestroy {
         }
 
         if (item.routerLink) {
-            this.router.navigate(item.routerLink);
+            console.log(item);
+            this.router.navigate([item.routerLink]);
         }
     }
 

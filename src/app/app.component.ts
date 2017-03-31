@@ -8,7 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app works!';
 
-    ngOnInit() {
 
-    }
+
+ 
+ private items: any[];
+  
+  ngOnInit() {
+    this.items = [];
+    this.items.push({ label: 'AgGrid', url: "aggrid" });
+    this.items.push({ label: 'Search', url: "search" });
+  }
 }
