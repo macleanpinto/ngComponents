@@ -1,0 +1,35 @@
+<div>
+    <p *ngIf = "index != 0">AND</p>
+    <form class="form-horizontal">
+        <div class="form-group" style="float:left;">
+            <label class="control-label col-sm-2">Attribute Type</label> 
+            <div class="col-sm-10">
+                <select class="form-control" id="attributeType">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal">
+        <div class="form-group" style="float:left;">
+            <label class="control-label col-sm-2">Attribute Value</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="attributeValue">
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal">
+        <div class="form-group" style="float:left; ">
+                "   "
+                
+                <button *ngIf="addCheck" class="btn btn-default"  (click)="addAttribute()">Add</button>
+                <button *ngIf="deleteCheck" class="btn btn-default"  (click)="deleteAttribute()">Delete</button>
+
+        </div>
+    </form>
+
+
+</div>

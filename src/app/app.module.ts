@@ -20,6 +20,8 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { LayoutComponent } from './layout/layout.component';
 import { NgComponentsModule } from './ng-components/ng-components.module';
+import { AttributeComponent } from './rebate-rules/attribute.component';
+import { RulesEditComponent } from './rebate-rules/rules-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { NgComponentsModule } from './ng-components/ng-components.module';
     GlyphiconButtonComponent,
     DynamicTabComponent,
     PopoverNg2BootstrapComponent,
-    LayoutComponent
+    LayoutComponent,
+    AttributeComponent,
+    RulesEditComponent
   ],
   imports: [
     BrowserModule,

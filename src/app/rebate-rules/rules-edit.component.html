@@ -1,0 +1,9 @@
+<div style="width: 300px; margin-bottom: 20px;" >
+  
+<ul *ngFor="let attribute of list ; let i = index" class="container">
+  <li ><br><rule-edit-attribute (add)="onAdd($event)" (delete)="onDelete(i)" [addCheck]="allowAdd" [deleteCheck]="allowDelete"
+   [attributeCounter]="attributeCounter" [index]="i"></rule-edit-attribute><br></li>
+  [index]={{i}}
+</ul>
+Increment Counter : {{attributeCounter}}
+</div>
