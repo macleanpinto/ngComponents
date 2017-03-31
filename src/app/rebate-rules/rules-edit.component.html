@@ -1,11 +1,12 @@
 <div>
   <ul *ngFor="let attribute of list ; let i = index" class="container">
-    <li>
-      <rule-edit-attribute (add)="onAdd($event)" (delete)="onDelete(i)" [addCheck]="allowAdd" (selected)="onSelect($event)"
-      [deleteCheck]="allowDelete" [attributeTypeValues]="attributeTypeValues" [index]="i">
-      
-      </rule-edit-attribute>
-    </li>
+
+    <rule-edit-attribute (add)="onAdd($event)" (delete)="onDelete(i)" [addCheck]="allowAdd" (selected)="onSelect($event,i)" [deleteCheck]="allowDelete"
+      [attributeTypeValues]="attributeTypeValues" [index]="i">
+
+    </rule-edit-attribute>
+
     [index]={{i}}
   </ul>
+  <ng-datepicker [id]="'demo-date'" [value]="dateValue"></ng-datepicker>
 </div>

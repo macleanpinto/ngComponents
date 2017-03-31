@@ -22,6 +22,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { NgComponentsModule } from './ng-components/ng-components.module';
 import { AttributeComponent } from './rebate-rules/attribute.component';
 import { RulesEditComponent } from './rebate-rules/rules-edit.component';
+import {TooltipModule, DatepickerModule} from 'ng2-bootstrap/ng2-bootstrap';
+import { NgDatepickerComponent } from './ng-components/ng2-date/ng-date.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { RulesEditComponent } from './rebate-rules/rules-edit.component';
     PopoverNg2BootstrapComponent,
     LayoutComponent,
     AttributeComponent,
-    RulesEditComponent
+    RulesEditComponent,NgDatepickerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { RulesEditComponent } from './rebate-rules/rules-edit.component';
     TabsModule.forRoot(),
     PopoverModule.forRoot(),
     ROUTES,
+    DatepickerModule.forRoot(),TooltipModule,
     AgGridModule.withComponents(
       [
         DateComponent,

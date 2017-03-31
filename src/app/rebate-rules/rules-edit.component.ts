@@ -15,14 +15,15 @@ export class RulesEditComponent {
     allowDelete: boolean = false;
     index: number;
     private attributeTypeValues: string[];
-
+    //dateValue: string = "2016/10/25";
+    private dateValue;
     constructor() {
-        this.attributeTypeValues = ['1', '2', '3', '4'];
+        this.attributeTypeValues = ['Brand', 'PMC', 'PMG','PSG', 'IS'];
+        this.dateValue = new Date();
     }
 
 
     onAdd(increment: number) {
-        console.log(increment);
         this.attributeCounter++;
         if (this.attributeCounter == 3)
             this.allowAdd = false;
@@ -32,14 +33,11 @@ export class RulesEditComponent {
         this.list.push([{ "item1": "pos1" }]);
     }
 
-    onDelete(increment: number) {
-        alert(this.attributeCounter);
+    onDelete(index: number) {
         if (this.attributeCounter > 1) {
             this.attributeCounter--;
-            // this.list.pop();
-
             // var index = this.list.indexOf(this.elt);
-            this.list.splice(increment, 1);
+            this.list.splice(index, 1);
         } else {
             alert('No');
         }
@@ -51,7 +49,8 @@ export class RulesEditComponent {
             this.allowDelete = false;
 
     }
-    onSelect(value) {
+    onSelect(value, index) {
+        this.attributeTypeValues.splice(value,1);
         console.log(value);
     }
 
