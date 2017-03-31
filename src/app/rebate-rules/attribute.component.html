@@ -3,7 +3,7 @@
     <form class="form-inline">
         <div class="form-group">
             <label for="attributeType">Attribute Type</label>
-            <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType">
+            <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType" (change)="onChange($event.target.value)">
             <option *ngFor="let attributeType of attributeTypeValues"    [value]="attributeType" >
                  {{attributeType}}
             </option>

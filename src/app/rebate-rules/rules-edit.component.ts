@@ -13,11 +13,11 @@ export class RulesEditComponent {
     list: Object[] = [{ "item1": "pos1" }];
     allowAdd: boolean = true;
     allowDelete: boolean = false;
-    index : number;
-    private attributeTypeValues : string[];
+    index: number;
+    private attributeTypeValues: string[];
 
-    constructor(){
-        this.attributeTypeValues = ['1','2','3','4'];
+    constructor() {
+        this.attributeTypeValues = ['1', '2', '3', '4'];
     }
 
 
@@ -26,7 +26,7 @@ export class RulesEditComponent {
         this.attributeCounter++;
         if (this.attributeCounter == 3)
             this.allowAdd = false;
-        if(this.attributeCounter > 1)
+        if (this.attributeCounter > 1)
             this.allowDelete = true;
 
         this.list.push([{ "item1": "pos1" }]);
@@ -34,22 +34,25 @@ export class RulesEditComponent {
 
     onDelete(increment: number) {
         alert(this.attributeCounter);
-        if (this.attributeCounter > 1){
+        if (this.attributeCounter > 1) {
             this.attributeCounter--;
-           // this.list.pop();
+            // this.list.pop();
 
-          // var index = this.list.indexOf(this.elt);
-           this.list.splice(increment, 1);
-        }else{
+            // var index = this.list.indexOf(this.elt);
+            this.list.splice(increment, 1);
+        } else {
             alert('No');
         }
 
-         if (this.attributeCounter < 3){
-             this.allowAdd = true;
-         }
-         if(this.attributeCounter == 1)
+        if (this.attributeCounter < 3) {
+            this.allowAdd = true;
+        }
+        if (this.attributeCounter == 1)
             this.allowDelete = false;
-         
+
+    }
+    onSelect(value) {
+        console.log(value);
     }
 
 }
