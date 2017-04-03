@@ -25,7 +25,8 @@ export class RulesEditComponent {
     private selectedCalcModel;
     constructor() {
 
-        this.attributeTypeValues = [{ value: 'Brand', disabled: true }, { value: 'PMC', disabled: false }, { value: 'PMG', disabled: false }, { value: 'PSG', disabled: false }, { value: 'IS', disabled: false }];
+        this.attributeTypeValues = [{ value: 'Please select', disabled: true, selected: true }, { value: 'Brand', disabled: false }, { value: 'PMC', disabled: false }, { value: 'PMG', disabled: false }, { value: 'PSG', disabled: false }, { value: 'IS', disabled: false }
+        ];
 
         this.calcModels = ['Per case', '% of list', 'Per net wt [LB or KG]', 'Per gross wt [LB or KG]', 'Per 100 wt [LB or KG]', 'Per PO'];
         this.requireReviewOptions = ['Yes', 'No'];
@@ -45,26 +46,25 @@ export class RulesEditComponent {
     }
 
     onDelete(value, index: number) {
-        this.attributeTypeValues[value.selected].disabled = false;
+        if (value.selected != undefined)
+            this.attributeTypeValues[value.selected].disabled = false;
         if (this.attributeCounter > 1) {
             this.attributeCounter--;
             this.list.splice(index, 1);
         } else {
-            alert('No');
+            console.info('No');
         }
-
         if (this.attributeCounter < 3) {
             this.allowAdd = true;
         }
         if (this.attributeCounter == 1)
             this.allowDelete = false;
-
     }
 
     onSelect(index) {
         this.attributeTypeValues[index.selected].disabled = true;
-        this.attributeTypeValues[index.previous].disabled = false;
-
+        if (index.previous != 0)
+            this.attributeTypeValues[index.previous].disabled = false;
     }
 
     onChangeCalcModel(value) {

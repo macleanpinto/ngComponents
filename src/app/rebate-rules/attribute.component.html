@@ -3,16 +3,17 @@
     <form class="form-inline">
         <div class="form-group">
 
-            <label for="attributeType">Attribute Type</label>
+            <label for="attributeType">Attribute Type:*</label>
             <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType" (change)="onChange($event.target.selectedIndex)" (focus)="onFocus($event.target.selectedIndex)">
-            <option *ngFor="let attributeType of attributeTypeValues"    [value]="attributeType"  [disabled]="attributeType.disabled">
-                
+            <option *ngFor="let attributeType of attributeTypeValues"  [value]="attributeType"  [disabled]="attributeType.disabled"
+            [selected]="attributeType.selected">
+                {{attributeType.value}}
             </option>
         </select>
         </div>
         <div class="form-group">
             <label for="attributeValue">Attribute Value:*</label>
-            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeValue" placeholder="Another input">
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeValue" placeholder="">
         </div>
         <div class="form-group">
             <button *ngIf="deleteCheck" class="btn btn-link mb-2 mr-sm-2 mb-sm-0" (click)="deleteAttribute()"><i class="fa fa-times fa-2" aria-hidden="true"></i></button>
