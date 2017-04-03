@@ -3,9 +3,9 @@
     <form class="form-inline">
         <div class="form-group">
             <label for="attributeType">Attribute Type</label>
-            <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType" (change)="onChange($event.target.value)">
-            <option *ngFor="let attributeType of attributeTypeValues"    [value]="attributeType" >
-                 {{attributeType}}
+            <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType" (change)="onChange($event.target.selectedIndex)"  (focus)="onFocus($event.target.selectedIndex)" >
+            <option *ngFor="let attributeType of attributeTypeValues"    [value]="attributeType"  [disabled]="attributeType.disabled">
+                 {{attributeType.value}}
             </option>
         </select>
         </div>

@@ -17,21 +17,29 @@ export class AttributeComponent {
     private add = new EventEmitter();
     private delete = new EventEmitter();
     private selected = new EventEmitter();
+    private previous: Number;
     constructor() { }
 
     ngOnInit() {
     }
     public addAttribute() {
-        this.add.emit({ increment: 1 });
+        this.add.emit();
     }
 
     public deleteAttribute() {
-        this.delete.emit({ increment: -1 });
+        this.delete.emit({ selected: this.previous });
     }
 
-    public onChange(value: String) {
-        this.selected.emit({ selected: value });
+    public onChange(index: Number) {
+        this.selected.emit({
+            selected: index,
+            previous: this.previous
+        });
+        this.previous = index;
     }
 
- 
+    public onFocus(index: Number) {
+        this.previous = index;
+    }
+
 }
