@@ -2,15 +2,16 @@
     <p *ngIf="index != 0">AND</p>
     <form class="form-inline">
         <div class="form-group">
+
             <label for="attributeType">Attribute Type</label>
-            <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType" (change)="onChange($event.target.selectedIndex)"  (focus)="onFocus($event.target.selectedIndex)" >
+            <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType" (change)="onChange($event.target.selectedIndex)" (focus)="onFocus($event.target.selectedIndex)">
             <option *ngFor="let attributeType of attributeTypeValues"    [value]="attributeType"  [disabled]="attributeType.disabled">
-                 {{attributeType.value}}
+                
             </option>
         </select>
         </div>
         <div class="form-group">
-            <label for="attributeValue">Attribute Value</label>
+            <label for="attributeValue">Attribute Value:*</label>
             <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeValue" placeholder="Another input">
         </div>
         <div class="form-group">
@@ -19,5 +20,3 @@
         </div>
     </form>
 </div>
-
-

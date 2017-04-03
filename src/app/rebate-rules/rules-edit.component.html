@@ -1,10 +1,52 @@
 <div>
+
+  <form class="container">
   <ul *ngFor="let attribute of list ; let index = index" class="container">
 
     <rule-edit-attribute (add)="onAdd()" (delete)="onDelete($event,index)" [addCheck]="allowAdd" (selected)="onSelect($event)" [deleteCheck]="allowDelete"
-      [attributeTypeValues]="attributeTypeValues">
+      [attributeTypeValues]="attributeTypeValues" [index]="index">
     </rule-edit-attribute>
 
-  </ul>
-  <ng-datepicker [id]="'demo-date'" [value]="dateValue"></ng-datepicker>
+  </ul><popover></popover>
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="attributeValue">Rebate Rate:*</label>
+      <input type="text" [(ngModel)]="rebateRate" name="rebateRate" class="form-control mb-2 mr-sm-2 mb-sm-0" id="rebateRate" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="calculationModel">Calculation Model:*</label>
+      <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="attributeType" (change)="onChangeCalcModel($event.target.value)">
+            <option *ngFor="let calcModel of calcModels"   [value]="calcModel" >
+                 {{calcModel}}
+            </option>
+        </select>
+    </div>
+    {{rebateRate}} {{selectedCalcModel}}
+  </form>
+
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="startDate">Start Date:*</label>
+      <ng-datepicker [id]="'start-date'" [value]="dateValue | date: 'dd/MM/yyyy'"></ng-datepicker>
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date:*</label>
+      <ng-datepicker [id]="'end-date'" [value]="dateValue | date: 'dd/MM/yyyy'"></ng-datepicker>
+    </div>
+    <div class="form-group">
+      <label for="requireReview">New Items Require Review</label>
+      <select class="form-control mb-2 mr-sm-2 mb-sm-0" id="requireReview">
+            <option *ngFor="let requireReview of requireReviewOptions"   [value]="requireReview" >
+                 {{requireReview}} 
+            </option>
+        </select>
+    </div>
+  </form>
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="attributeValue">External Facing Comments:</label>
+      <input type="text" name="externalFacingComments" class="form-control mb-2 mr-sm-2 mb-sm-0" id="externalFacingComments" placeholder="Simple notes about the item(s) entered">
+    </div>
+  </form>
+  </form>
 </div>

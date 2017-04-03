@@ -14,11 +14,22 @@ export class RulesEditComponent {
     allowAdd: boolean = true;
     allowDelete: boolean = false;
     index: number;
+
     private attributeTypeValues;
+    private calcModels: string[];
+    private requireReviewOptions: string[];
+
     //dateValue: string = "2016/10/25";
     private dateValue;
+    private rebateRate;
+    private selectedCalcModel;
     constructor() {
-        this.attributeTypeValues = [{ value: 'Brand', disabled: false }, { value: 'PMC', disabled: false }, { value: 'PMG', disabled: false }, { value: 'PSG', disabled: false }, { value: 'IS', disabled: false }];
+
+        this.attributeTypeValues = [{ value: 'Brand', disabled: true }, { value: 'PMC', disabled: false }, { value: 'PMG', disabled: false }, { value: 'PSG', disabled: false }, { value: 'IS', disabled: false }];
+
+        this.calcModels = ['Per case', '% of list', 'Per net wt [LB or KG]', 'Per gross wt [LB or KG]', 'Per 100 wt [LB or KG]', 'Per PO'];
+        this.requireReviewOptions = ['Yes', 'No'];
+
         this.dateValue = new Date();
     }
 
@@ -49,9 +60,15 @@ export class RulesEditComponent {
             this.allowDelete = false;
 
     }
+
     onSelect(index) {
         this.attributeTypeValues[index.selected].disabled = true;
         this.attributeTypeValues[index.previous].disabled = false;
+
+    }
+
+    onChangeCalcModel(value) {
+        this.selectedCalcModel = value;
     }
 
 }
