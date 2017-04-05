@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -24,6 +24,9 @@ import { AttributeComponent } from './rebate-rules/attribute.component';
 import { RulesEditComponent } from './rebate-rules/rules-edit.component';
 import {TooltipModule, DatepickerModule} from 'ng2-bootstrap/ng2-bootstrap';
 import { NgDatepickerComponent } from './ng-components/ng2-date/ng-date.component';
+import { AgreementSearchGridComponent } from './agreement-search-grid/agreement-search-grid.component';
+import { AgreementSearchService } from './agreement-search-grid/agreement-search.service';
+import { DemoFormSkuBuilder } from './ng-form/my-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { NgDatepickerComponent } from './ng-components/ng2-date/ng-date.componen
     PopoverNg2BootstrapComponent,
     LayoutComponent,
     AttributeComponent,
-    RulesEditComponent,NgDatepickerComponent
+    RulesEditComponent,NgDatepickerComponent, AgreementSearchGridComponent,
+    DemoFormSkuBuilder
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { NgDatepickerComponent } from './ng-components/ng2-date/ng-date.componen
     PopoverModule.forRoot(),
     ROUTES,
     DatepickerModule.forRoot(),TooltipModule,
+    ReactiveFormsModule,
     AgGridModule.withComponents(
       [
         DateComponent,
@@ -60,7 +65,7 @@ import { NgDatepickerComponent } from './ng-components/ng2-date/ng-date.componen
     ),
     NgComponentsModule
   ],
-  providers: [],
+  providers: [AgreementSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

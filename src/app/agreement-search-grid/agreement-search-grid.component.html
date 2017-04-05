@@ -1,0 +1,33 @@
+<p>
+  agreement-search-grid works!
+</p>
+<div style="padding: 4px;">
+  <div style="float: right;">
+    <input (keyup)="onQuickFilterChanged($event)" type="text" id="quickFilterInput" placeholder="Type text to filter...">
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </div>
+  <button (click)="searchAgreements()">Refresh Data</button>
+  <div>
+    Results {{rowCount}}
+  </div>
+  <div style="clear: both;"></div>
+</div>
+<ag-grid-angular #agGrid style="width: 100%; height: 350px;" class="ag-fresh" [gridOptions]="gridOptions" [columnDefs]="columnDefs"
+  [showToolPanel]="showToolPanel" enableColResize enableSorting enableFilter groupHeaders toolPanelSuppressGroups toolPanelSuppressValues
+  rowHeight="22" rowSelection="multiple" rowModelType="pagination" (modelUpdated)="onModelUpdated()" (cellClicked)="onCellClicked($event)"
+  (cellDoubleClicked)="onCellDoubleClicked($event)" (cellContextMenu)="onCellContextMenu($event)" (cellValueChanged)="onCellValueChanged($event)"
+  (cellFocused)="onCellFocused($event)" (rowSelected)="onRowSelected($event)" (selectionChanged)="onSelectionChanged()" (beforeFilterChanged)="onBeforeFilterChanged()"
+  (afterFilterChanged)="onAfterFilterChanged()" (filterModified)="onFilterModified()" (beforeSortChanged)="onBeforeSortChanged()"
+  (afterSortChanged)="onAfterSortChanged()" (virtualRowRemoved)="onVirtualRowRemoved($event)" (rowClicked)="onRowClicked($event)"
+  (gridReady)="onReady($event)" (columnEverythingChanged)="onColumnEvent($event)" (columnRowGroupChanged)="onColumnEvent($event)"
+  (columnValueChanged)="onColumnEvent($event)" (columnMoved)="onColumnEvent($event)" (columnVisible)="onColumnEvent($event)"
+  (columnGroupOpened)="onColumnEvent($event)" (columnResized)="onColumnEvent($event)" (columnPinnedCountChanged)="onColumnEvent($event)">
+</ag-grid-angular>
+<div style="float: left;">
+      <select (change)="onPageSizeChanged($event)">
+            <option value="5" >5</option>
+            <option value="10" selected>10</option>
+            <option value="15" >25</option>
+            <option value="100">50</option>
+        </select>
+</div>
